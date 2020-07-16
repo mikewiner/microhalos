@@ -1,0 +1,22 @@
+import sys
+import numpy as np
+import pylab as py
+
+filename = str(sys.argv[1])
+data = np.loadtxt(filename)
+
+host = data[:,1]
+data2 = data[host == 0]
+
+x = data2[:,5]*1000
+y = data2[:,6]*1000
+z = data2[:,7]*1000
+
+py.figure()
+py.scatter(x,y,s=1,marker='.',color = 'b')
+py.xlim(0,60)
+py.ylim(0,60)
+py.xlabel('Parsecs')
+py.ylabel('Parsecs')
+py.title('Downward view of halos in 60 comoving parsec box')
+py.show()

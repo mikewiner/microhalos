@@ -1,0 +1,20 @@
+import sys
+import numpy as np
+import pylab as py
+
+file1    = str(sys.argv[1])
+halonum  = int(sys.argv[2])
+
+data     = np.loadtxt(file1)
+
+hosthalo = data[halonum-1,0]
+host     = data[:,1]
+data     = data[host == hosthalo]
+print data,host
+print len(data)
+#for i in len(
+
+
+
+
+print ('%lf' %hosthalo) 
